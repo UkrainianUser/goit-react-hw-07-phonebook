@@ -1,0 +1,17 @@
+.label {
+	display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.input {
+	padding: 8px;
+	font-size: 24px;
+	border-radius: 12px;
+	border: 2px solid #e3a95e;
+	background-color: #ebcba1;
+	box-shadow: rgba(247, 156, 37, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}

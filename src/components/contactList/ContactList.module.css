@@ -1,0 +1,30 @@
+.contactsList {
+	font-size: 24px;
+	font-weight: 600;
+	padding: 0 12px;
+}
+
+.contactsItem {
+	list-style-type: none;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 8px;
+}
+
+.contactsBtn {
+	align-items: center;
+	text-align: center;
+	margin-left: 16px;
+	max-height: 22px;
+	font-size: 14px;
+	font-weight: 400;
+	background-color: rgb(255, 184, 71);
+	border-color: tomato;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+.contactsBtn:hover{
+	background-color: tomato;
+	border-color: tomato;
+}

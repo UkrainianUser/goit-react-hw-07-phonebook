@@ -1,0 +1,38 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.label {
+	display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+	font-size: 24px;
+	font-weight: 600;
+}
+
+.input {
+	padding: 8px;
+	font-size: 24px;
+	border-radius: 12px;
+	border: 2px solid #e3a95e;
+	background-color: #ebcba1;
+	box-shadow: rgba(247, 156, 37, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.formBtn {
+	padding: 8px;
+	font-size: 24px;
+	font-weight: 600;
+	background-color: rgb(0, 204, 204);
+	border-color: rgb(0, 204, 204);
+	border-radius: 12px;
+	cursor: pointer;
+}
+
+.formBtn:hover {
+	background-color: rgba(0, 200, 120, 0.6);
+	border-color: rgba(0, 204, 204, 0.3);
+}
