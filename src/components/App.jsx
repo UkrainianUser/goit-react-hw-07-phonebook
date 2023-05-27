@@ -4,7 +4,7 @@ import Filter from './filter/Filter';
 import ContactList from './contactList/ContactList';
 import Loader from './loader/Loader';
 import { useEffect } from 'react';
-import { fetchContactsThunk } from 'redux/operations';
+import { fetchContacts } from 'redux/operations';
 import { useDispatch, useSelector } from 'react-redux';
 import { getError, getIsLoading } from 'redux/selectors';
 
@@ -14,7 +14,7 @@ export default function App() {
   const error = useSelector(getError);
 
   useEffect(() => {
-    dispatch(fetchContactsThunk());
+    dispatch(fetchContacts());
   }, [dispatch]);
 
   return (
@@ -23,9 +23,9 @@ export default function App() {
       <ContactForm />
       <h2>Contacts</h2>
       <Filter />
-      {isLoading && <Loader />}
       {error && <p>{error}</p>}
       <ContactList />
+      {isLoading && <Loader />}
     </div>
   );
 }

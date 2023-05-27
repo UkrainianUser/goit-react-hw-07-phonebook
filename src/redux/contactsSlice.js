@@ -1,10 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { nanoid } from 'nanoid';
-import {
-  addContactsThunk,
-  deleteContactsThunk,
-  fetchContactsThunk,
-} from './operations';
+import { addContact, deleteContact, fetchContacts } from './operations';
 
 const initialState = {
   items: [],
@@ -27,27 +23,27 @@ const contactsSlice = createSlice({
 
   extraReducers: builder => {
     builder
-      .addCase(fetchContactsThunk.pending, handlePending)
-      .addCase(fetchContactsThunk.fulfilled, (state, action) => {
+      .addCase(fetchContacts.pending, handlePending)
+      .addCase(fetchContacts.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.items = action.payload;
       })
-      .addCase(fetchContactsThunk.rejected, handleRejected)
-      .addCase(addContactsThunk.pending, handlePending)
-      .addCase(addContactsThunk.fulfilled, (state, action) => {
+      .addCase(fetchContacts.rejected, handleRejected)
+      .addCase(addContact.pending, handlePending)
+      .addCase(addContact.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.items.push({ id: nanoid(), ...action.payload });
       })
-      .addCase(addContactsThunk.rejected, handleRejected)
-      .addCase(deleteContactsThunk.pending, handlePending)
-      .addCase(deleteContactsThunk.fulfilled, (state, action) => {
+      .addCase(addContact.rejected, handleRejected)
+      .addCase(deleteContact.pending, handlePending)
+      .addCase(deleteContact.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.items = state.items.filter(({ id }) => id !== action.payload.id);
       })
-      .addCase(deleteContactsThunk.rejected, handleRejected);
+      .addCase(deleteContact.rejected, handleRejected);
   },
 });
 

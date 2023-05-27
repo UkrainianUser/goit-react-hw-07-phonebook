@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import css from './ContactForm.module.css';
 import { getContacts } from 'redux/selectors';
-import { addContactsThunk } from 'redux/operations';
+import { addContact } from 'redux/operations';
 
 export default function ContactForm() {
   const contacts = useSelector(getContacts);
@@ -28,7 +28,7 @@ export default function ContactForm() {
       alert(`${number} is already in contacts.`);
       return;
     }
-    dispatch(addContactsThunk({ name, number }));
+    dispatch(addContact({ name, number }));
     reset();
   };
 
